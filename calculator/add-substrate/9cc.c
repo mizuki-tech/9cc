@@ -3,7 +3,7 @@
 
 int main(int argc, char **argv) {
 	if (argc != 2) {
-		fprintf(stderr, "引数の数が異なります。\n");
+		fprintf(stderr, "引数の個数が正しくありません。\n");
 		return 1;
 	}
 
@@ -24,13 +24,6 @@ int main(int argc, char **argv) {
 		if (*p == '-') {
 			p++;
 			printf("    sub rax, %ld\n", strtol(p, &p, 10));
-			continue;
 		}
-
-		fprintf(stderr, "予期しない文字です。%c\n", *p);
-		return 1;
 	}
-
-	printf("    ret\n");
-	return 0;
 }
